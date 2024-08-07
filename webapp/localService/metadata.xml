@@ -1,0 +1,205 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV" xml:lang="en"
+			sap:schema-version="1">
+			<EntityType Name="xVWKSxNLP_CCTR_C_RoD_CMN_HDRType" sap:label="Common Header for Request of Distribution" sap:content-version="1">
+				<Key><PropertyRef Name="key_link"/></Key><Property Name="key_link" Type="Edm.Int64" Nullable="false" sap:label="Key Link"/><Property Name="process_flow_id" Type="Edm.Int16" sap:label="Process Flow ID Pmat"/><Property Name="sender_system_id" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Sender ID PMat"/><Property Name="document_no" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Document Number"/><Property Name="document_type" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Document Type"/><Property Name="material" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Material"/><Property Name="purchaser" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Purchasing Group" sap:creatable="false"
+					sap:updatable="false"/><Property Name="purch_group" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Purchasing Group"/><Property Name="company_code" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/><Property Name="purch_org" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Purch. organization"/><Property Name="con_system" Type="Edm.String" MaxLength="10" sap:label="Connected System ID"/><Property Name="description" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="Material Description"/><NavigationProperty Name="to_CONTRACT" Relationship="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_595B39A614D1330039933CB2FB4763F3"
+					FromRole="FromRole_assoc_595B39A614D1330039933CB2FB4763F3" ToRole="ToRole_assoc_595B39A614D1330039933CB2FB4763F3"/><NavigationProperty Name="to_Header" Relationship="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_2EE5C7EC41DF42CABA5B7F854E731053"
+					FromRole="FromRole_assoc_2EE5C7EC41DF42CABA5B7F854E731053" ToRole="ToRole_assoc_2EE5C7EC41DF42CABA5B7F854E731053"/><NavigationProperty Name="to_PLANT" Relationship="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_3327B0D21EFF2FA2769F09B335E1AD33"
+					FromRole="FromRole_assoc_3327B0D21EFF2FA2769F09B335E1AD33" ToRole="ToRole_assoc_3327B0D21EFF2FA2769F09B335E1AD33"/></EntityType>
+			<EntityType Name="xVWKSxNLP_CCTR_C_RoD_CONTRACTType" sap:label="Selected contracts for Request of Distribution" sap:content-version="1">
+				<Key><PropertyRef Name="key_link"/><PropertyRef Name="ebeln"/></Key><Property Name="key_link" Type="Edm.Int64" Nullable="false" sap:label="Key Link"/><Property Name="ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Contract Number"
+					sap:creatable="false" sap:updatable="false"/><Property Name="supplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Vendor" sap:creatable="false"
+					sap:updatable="false"/><Property Name="doc_type" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Contract Type" sap:creatable="false"
+					sap:updatable="false"/><Property Name="valid_from" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Validity Per. Start"
+					sap:creatable="false" sap:updatable="false"/><Property Name="valid_to" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Validity Period End" sap:creatable="false"
+					sap:updatable="false"/><Property Name="target_quantity" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Target Quantity" sap:creatable="false"
+					sap:updatable="false"/><Property Name="deletion_indicator" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Deletion indicator"/><Property Name="selected" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Single-Character Flag"/><NavigationProperty Name="to_CommonHDR" Relationship="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_595B39A614D1330039933CB2FB4763F3"
+					FromRole="ToRole_assoc_595B39A614D1330039933CB2FB4763F3" ToRole="FromRole_assoc_595B39A614D1330039933CB2FB4763F3"/></EntityType>
+			<EntityType Name="xVWKSxNLP_CCTR_C_RoD_HEADERType" sap:label="Contract Header Request of Distribution" sap:content-version="1">
+				<Key><PropertyRef Name="key_link"/></Key><Property Name="key_link" Type="Edm.Int64" Nullable="false" sap:label="Key Link"/><Property Name="purch_group" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:text="purch_group_Text"
+					sap:label="Purchasing Group"/><Property Name="purch_group_Text" Type="Edm.String" MaxLength="18" sap:label="Purchasing Grp. Name" sap:creatable="false"
+					sap:updatable="false"/><Property Name="company_code" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="company_code_Text"
+					sap:label="Company Code"/><Property Name="company_code_Text" Type="Edm.String" MaxLength="25" sap:label="Company Name" sap:creatable="false" sap:updatable="false"/><Property Name="purch_org" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="purch_org_Text"
+					sap:label="Purch. organization"/><Property Name="purch_org_Text" Type="Edm.String" MaxLength="20" sap:label="Conn. Purch Org Name" sap:creatable="false"
+					sap:updatable="false"/><Property Name="con_system" Type="Edm.String" MaxLength="10" sap:label="Connected System ID"/><Property Name="trigger_point" Type="Edm.String" MaxLength="4" sap:label="Trigger"/><NavigationProperty Name="to_CommonHDR" Relationship="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_2EE5C7EC41DF42CABA5B7F854E731053"
+					FromRole="ToRole_assoc_2EE5C7EC41DF42CABA5B7F854E731053" ToRole="FromRole_assoc_2EE5C7EC41DF42CABA5B7F854E731053"/></EntityType>
+			<EntityType Name="xVWKSxNLP_CCTR_C_RoD_PLANTType" sap:label="Plant for Request of Distribution" sap:content-version="1">
+				<Key><PropertyRef Name="key_link"/><PropertyRef Name="plant"/></Key><Property Name="key_link" Type="Edm.Int64" Nullable="false" sap:label="Key Link"/><Property Name="plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant"/><Property Name="project_id" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Project ID"/><Property Name="project_name" Type="Edm.String" MaxLength="60" sap:label="Project Name"/><Property Name="lanuch_date" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Launch Date"/><Property Name="demand_qt1" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="uom" sap:label="Target Quantity"/><Property Name="demand_qt2" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="uom" sap:label="Target Quantity"/><Property Name="demand_qt3" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="uom" sap:label="Target Quantity"/><Property Name="demand_qt4" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="uom" sap:label="Target Quantity"/><Property Name="demand_qt5" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="uom" sap:label="Target Quantity"/><Property Name="uom" Type="Edm.String" MaxLength="3" sap:label="UoM" sap:semantics="unit-of-measure"/><NavigationProperty Name="to_CommonHDR" Relationship="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_AC27B15D7B65B29C826F370DC4E75FB6"
+					FromRole="FromRole_assoc_AC27B15D7B65B29C826F370DC4E75FB6" ToRole="ToRole_assoc_AC27B15D7B65B29C826F370DC4E75FB6"/></EntityType>
+			<EntityType Name="xVWKSxNLP_I_PMAT_RoD_CMN_HDRTPType" sap:label="TPView: Common Header for Request of Distribution" sap:content-version="1">
+				<Key><PropertyRef Name="key_link"/></Key><Property Name="key_link" Type="Edm.Int64" Nullable="false" sap:label="Key Link"/><Property Name="process_flow_id" Type="Edm.Int16" sap:label="Process Flow ID Pmat"/><Property Name="sender_system_id" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Sender ID PMat"/><Property Name="document_no" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Document Number"/><Property Name="document_type" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Document Type"/><Property Name="material" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Material"/><Property Name="description" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="Material Description"/><Property Name="purchaser" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Purchasing Group"/><Property Name="status" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Status"/><Property Name="action_type" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Action Type"/><Property Name="supplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Supplier"/><Property Name="external_header" Type="Edm.String" MaxLength="70" sap:label="External Reference"/><Property Name="result_longtext" Type="Edm.String" MaxLength="200" sap:label="Result Long text"/><Property Name="creationdatetime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created On"/><Property Name="createdby" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By"/><Property Name="lastchangedatetime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed On"/><Property Name="lastchangedbyuser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Changed By"/><NavigationProperty Name="to_CONTRACT" Relationship="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_FCB102E14938BFC427F6BC594D55BB07"
+					FromRole="FromRole_assoc_FCB102E14938BFC427F6BC594D55BB07" ToRole="ToRole_assoc_FCB102E14938BFC427F6BC594D55BB07"/><NavigationProperty Name="to_Header" Relationship="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_4840C6FB3025D66E336EB8827A1C26F1"
+					FromRole="FromRole_assoc_4840C6FB3025D66E336EB8827A1C26F1" ToRole="ToRole_assoc_4840C6FB3025D66E336EB8827A1C26F1"/><NavigationProperty Name="to_PLANT" Relationship="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_0EF4F84726FC2FF17A9C203CEDEF54EC"
+					FromRole="FromRole_assoc_0EF4F84726FC2FF17A9C203CEDEF54EC" ToRole="ToRole_assoc_0EF4F84726FC2FF17A9C203CEDEF54EC"/></EntityType>
+			<EntityType Name="xVWKSxNLP_I_PMAT_RoD_CONTRACTPType" sap:label="TPView: Selected contracts for Request of Distribution"
+				sap:content-version="1">
+				<Key><PropertyRef Name="key_link"/><PropertyRef Name="ebeln"/></Key><Property Name="key_link" Type="Edm.Int64" Nullable="false" sap:label="Key Link"/><Property Name="ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchasing Document"/><Property Name="supplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Vendor"/><Property Name="doc_type" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Purchasing Doc. Type"/><Property Name="valid_from" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Validity Per. Start"/><Property Name="valid_to" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Validity Period End"/><Property Name="target_quantity" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Target Quantity"/><Property Name="deletion_indicator" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Deletion indicator"/><Property Name="selected" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Single-Character Flag"/><NavigationProperty Name="to_CommonHDR" Relationship="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_FCB102E14938BFC427F6BC594D55BB07"
+					FromRole="ToRole_assoc_FCB102E14938BFC427F6BC594D55BB07" ToRole="FromRole_assoc_FCB102E14938BFC427F6BC594D55BB07"/></EntityType>
+			<EntityType Name="xVWKSxNLP_I_PMAT_RoD_HEADERTPType" sap:label="TPview: Contract Header - Request of Distribution" sap:content-version="1">
+				<Key><PropertyRef Name="key_link"/></Key><Property Name="key_link" Type="Edm.Int64" Nullable="false" sap:label="Key Link"/><Property Name="purch_group" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Purchasing Group"/><Property Name="company_code" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/><Property Name="purch_org" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Purch. organization"/><Property Name="con_system" Type="Edm.String" MaxLength="10" sap:label="Connected System ID"/><Property Name="trigger_point" Type="Edm.String" MaxLength="4" sap:label="Trigger"/><NavigationProperty Name="to_CommonHDR" Relationship="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_4840C6FB3025D66E336EB8827A1C26F1"
+					FromRole="ToRole_assoc_4840C6FB3025D66E336EB8827A1C26F1" ToRole="FromRole_assoc_4840C6FB3025D66E336EB8827A1C26F1"/></EntityType>
+			<EntityType Name="xVWKSxNLP_I_PMAT_RoD_PlantTPType" sap:label="TPView: Plant - Request of Distribution" sap:content-version="1">
+				<Key><PropertyRef Name="key_link"/><PropertyRef Name="plant"/></Key><Property Name="key_link" Type="Edm.Int64" Nullable="false" sap:label="Key Link"/><Property Name="plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant"/><Property Name="project_id" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Project ID"/><Property Name="project_name" Type="Edm.String" MaxLength="60" sap:label="Project Name"/><Property Name="lanuch_date" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Launch Date"/><Property Name="demand_qt1" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Target Quantity"/><Property Name="demand_qt2" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Target Quantity"/><Property Name="demand_qt3" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Target Quantity"/><Property Name="demand_qt4" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Target Quantity"/><Property Name="demand_qt5" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Target Quantity"/><Property Name="uom" Type="Edm.String" MaxLength="3" sap:label="UoM" sap:semantics="unit-of-measure"/><NavigationProperty Name="to_CommonHDR" Relationship="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_0EF4F84726FC2FF17A9C203CEDEF54EC"
+					FromRole="ToRole_assoc_0EF4F84726FC2FF17A9C203CEDEF54EC" ToRole="FromRole_assoc_0EF4F84726FC2FF17A9C203CEDEF54EC"/></EntityType>
+			<Association Name="assoc_AC27B15D7B65B29C826F370DC4E75FB6" sap:content-version="1"><End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_CCTR_C_RoD_PLANTType" Multiplicity="1"
+				Role="FromRole_assoc_AC27B15D7B65B29C826F370DC4E75FB6"/><End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_CMN_HDRTPType" Multiplicity="0..1"
+				Role="ToRole_assoc_AC27B15D7B65B29C826F370DC4E75FB6"/></Association>
+			<Association Name="assoc_FCB102E14938BFC427F6BC594D55BB07" sap:content-version="1">
+				<End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_CMN_HDRTPType" Multiplicity="1"
+					Role="FromRole_assoc_FCB102E14938BFC427F6BC594D55BB07"><OnDelete Action="Cascade"/></End><End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_CONTRACTPType" Multiplicity="*"
+					Role="ToRole_assoc_FCB102E14938BFC427F6BC594D55BB07"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_FCB102E14938BFC427F6BC594D55BB07"><PropertyRef Name="key_link"/></Principal>
+					<Dependent Role="ToRole_assoc_FCB102E14938BFC427F6BC594D55BB07"><PropertyRef Name="key_link"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_4840C6FB3025D66E336EB8827A1C26F1" sap:content-version="1">
+				<End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_CMN_HDRTPType" Multiplicity="1"
+					Role="FromRole_assoc_4840C6FB3025D66E336EB8827A1C26F1"><OnDelete Action="Cascade"/></End><End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_HEADERTPType" Multiplicity="0..1"
+					Role="ToRole_assoc_4840C6FB3025D66E336EB8827A1C26F1"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_4840C6FB3025D66E336EB8827A1C26F1"><PropertyRef Name="key_link"/></Principal>
+					<Dependent Role="ToRole_assoc_4840C6FB3025D66E336EB8827A1C26F1"><PropertyRef Name="key_link"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_0EF4F84726FC2FF17A9C203CEDEF54EC" sap:content-version="1">
+				<End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_CMN_HDRTPType" Multiplicity="1"
+					Role="FromRole_assoc_0EF4F84726FC2FF17A9C203CEDEF54EC"><OnDelete Action="Cascade"/></End><End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_PlantTPType" Multiplicity="*"
+					Role="ToRole_assoc_0EF4F84726FC2FF17A9C203CEDEF54EC"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_0EF4F84726FC2FF17A9C203CEDEF54EC"><PropertyRef Name="key_link"/></Principal>
+					<Dependent Role="ToRole_assoc_0EF4F84726FC2FF17A9C203CEDEF54EC"><PropertyRef Name="key_link"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_2EE5C7EC41DF42CABA5B7F854E731053" sap:content-version="1">
+				<End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_CCTR_C_RoD_CMN_HDRType" Multiplicity="1"
+					Role="FromRole_assoc_2EE5C7EC41DF42CABA5B7F854E731053"><OnDelete Action="Cascade"/></End><End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_CCTR_C_RoD_HEADERType" Multiplicity="0..1"
+					Role="ToRole_assoc_2EE5C7EC41DF42CABA5B7F854E731053"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_2EE5C7EC41DF42CABA5B7F854E731053"><PropertyRef Name="key_link"/></Principal>
+					<Dependent Role="ToRole_assoc_2EE5C7EC41DF42CABA5B7F854E731053"><PropertyRef Name="key_link"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_3327B0D21EFF2FA2769F09B335E1AD33" sap:content-version="1">
+				<End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_CCTR_C_RoD_CMN_HDRType" Multiplicity="1"
+					Role="FromRole_assoc_3327B0D21EFF2FA2769F09B335E1AD33"><OnDelete Action="Cascade"/></End><End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_CCTR_C_RoD_PLANTType" Multiplicity="*"
+					Role="ToRole_assoc_3327B0D21EFF2FA2769F09B335E1AD33"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_3327B0D21EFF2FA2769F09B335E1AD33"><PropertyRef Name="key_link"/></Principal>
+					<Dependent Role="ToRole_assoc_3327B0D21EFF2FA2769F09B335E1AD33"><PropertyRef Name="key_link"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_595B39A614D1330039933CB2FB4763F3" sap:content-version="1">
+				<End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_CCTR_C_RoD_CMN_HDRType" Multiplicity="1"
+					Role="FromRole_assoc_595B39A614D1330039933CB2FB4763F3"><OnDelete Action="Cascade"/></End><End Type="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_CCTR_C_RoD_CONTRACTType" Multiplicity="*"
+					Role="ToRole_assoc_595B39A614D1330039933CB2FB4763F3"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_595B39A614D1330039933CB2FB4763F3"><PropertyRef Name="key_link"/></Principal>
+					<Dependent Role="ToRole_assoc_595B39A614D1330039933CB2FB4763F3"><PropertyRef Name="key_link"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="VWKS_NLP_CCTR_REQ_FOR_DISTR_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx"><EntitySet Name="xVWKSxNLP_CCTR_C_RoD_CMN_HDR" EntityType="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_CCTR_C_RoD_CMN_HDRType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="xVWKSxNLP_CCTR_C_RoD_CONTRACT" EntityType="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_CCTR_C_RoD_CONTRACTType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="xVWKSxNLP_CCTR_C_RoD_HEADER" EntityType="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_CCTR_C_RoD_HEADERType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="xVWKSxNLP_CCTR_C_RoD_PLANT" EntityType="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_CCTR_C_RoD_PLANTType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="xVWKSxNLP_I_PMAT_RoD_CMN_HDRTP" EntityType="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_CMN_HDRTPType"
+				sap:content-version="1"/><EntitySet Name="xVWKSxNLP_I_PMAT_RoD_CONTRACTP" EntityType="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_CONTRACTPType"
+				sap:content-version="1"/><EntitySet Name="xVWKSxNLP_I_PMAT_RoD_HEADERTP" EntityType="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_HEADERTPType"
+				sap:content-version="1"/><EntitySet Name="xVWKSxNLP_I_PMAT_RoD_PlantTP" EntityType="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_PlantTPType"
+				sap:content-version="1"/>
+				<AssociationSet Name="assoc_FCB102E14938BFC427F6BC594D55BB07"
+					Association="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_FCB102E14938BFC427F6BC594D55BB07" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="xVWKSxNLP_I_PMAT_RoD_CMN_HDRTP" Role="FromRole_assoc_FCB102E14938BFC427F6BC594D55BB07"/><End EntitySet="xVWKSxNLP_I_PMAT_RoD_CONTRACTP" Role="ToRole_assoc_FCB102E14938BFC427F6BC594D55BB07"/></AssociationSet>
+				<AssociationSet Name="assoc_0EF4F84726FC2FF17A9C203CEDEF54EC"
+					Association="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_0EF4F84726FC2FF17A9C203CEDEF54EC" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="xVWKSxNLP_I_PMAT_RoD_CMN_HDRTP" Role="FromRole_assoc_0EF4F84726FC2FF17A9C203CEDEF54EC"/><End EntitySet="xVWKSxNLP_I_PMAT_RoD_PlantTP" Role="ToRole_assoc_0EF4F84726FC2FF17A9C203CEDEF54EC"/></AssociationSet>
+				<AssociationSet Name="assoc_3327B0D21EFF2FA2769F09B335E1AD33"
+					Association="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_3327B0D21EFF2FA2769F09B335E1AD33" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="xVWKSxNLP_CCTR_C_RoD_CMN_HDR" Role="FromRole_assoc_3327B0D21EFF2FA2769F09B335E1AD33"/><End EntitySet="xVWKSxNLP_CCTR_C_RoD_PLANT" Role="ToRole_assoc_3327B0D21EFF2FA2769F09B335E1AD33"/></AssociationSet>
+				<AssociationSet Name="assoc_2EE5C7EC41DF42CABA5B7F854E731053"
+					Association="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_2EE5C7EC41DF42CABA5B7F854E731053" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="xVWKSxNLP_CCTR_C_RoD_CMN_HDR" Role="FromRole_assoc_2EE5C7EC41DF42CABA5B7F854E731053"/><End EntitySet="xVWKSxNLP_CCTR_C_RoD_HEADER" Role="ToRole_assoc_2EE5C7EC41DF42CABA5B7F854E731053"/></AssociationSet>
+				<AssociationSet Name="assoc_4840C6FB3025D66E336EB8827A1C26F1"
+					Association="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_4840C6FB3025D66E336EB8827A1C26F1" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="xVWKSxNLP_I_PMAT_RoD_CMN_HDRTP" Role="FromRole_assoc_4840C6FB3025D66E336EB8827A1C26F1"/><End EntitySet="xVWKSxNLP_I_PMAT_RoD_HEADERTP" Role="ToRole_assoc_4840C6FB3025D66E336EB8827A1C26F1"/></AssociationSet>
+				<AssociationSet Name="assoc_AC27B15D7B65B29C826F370DC4E75FB6"
+					Association="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_AC27B15D7B65B29C826F370DC4E75FB6" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="xVWKSxNLP_CCTR_C_RoD_PLANT" Role="FromRole_assoc_AC27B15D7B65B29C826F370DC4E75FB6"/><End EntitySet="xVWKSxNLP_I_PMAT_RoD_CMN_HDRTP" Role="ToRole_assoc_AC27B15D7B65B29C826F370DC4E75FB6"/></AssociationSet>
+				<AssociationSet Name="assoc_595B39A614D1330039933CB2FB4763F3"
+					Association="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.assoc_595B39A614D1330039933CB2FB4763F3" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="xVWKSxNLP_CCTR_C_RoD_CMN_HDR" Role="FromRole_assoc_595B39A614D1330039933CB2FB4763F3"/><End EntitySet="xVWKSxNLP_CCTR_C_RoD_CONTRACT" Role="ToRole_assoc_595B39A614D1330039933CB2FB4763F3"/></AssociationSet>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm"
+				Target="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.VWKS_NLP_CCTR_REQ_FOR_DISTR_SRV_Entities"><Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Rollup" EnumMember="None"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_CMN_HDRTPType">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>key_link</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_CONTRACTPType">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>ebeln</PropertyPath>
+						<PropertyPath>key_link</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_HEADERTPType">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>key_link</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.xVWKSxNLP_I_PMAT_RoD_PlantTPType">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>key_link</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm"
+				Target="VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV.VWKS.NLP_CCTR_REQ_FOR_DISTR_SRV_Entities">
+				<Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+					<Record Type="Org.OData.Capabilities.V1.BatchSupportType"><PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/></Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/vwks/NLP_CCTR_REQ_FOR_DISTR_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/vwks/NLP_CCTR_REQ_FOR_DISTR_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

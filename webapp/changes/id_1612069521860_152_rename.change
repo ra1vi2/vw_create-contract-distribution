@@ -1,0 +1,44 @@
+{
+	"fileName": "id_1612069521860_152_rename",
+	"fileType": "change",
+	"changeType": "rename",
+	"moduleName": "",
+	"reference": "vwks.nlp.s2p.mm.ctrdist.create.Component",
+	"packageName": "$TMP",
+	"content": {
+		"originalControlType": "sap.m.Button"
+	},
+	"selector": {
+		"id": "vwks.nlp.s2p.mm.ctrdist.create::sap.suite.ui.generic.template.ObjectPage.view.Details::xVWKSxNLP_CCTR_C_RoD_CMN_HDR--activate",
+		"idIsLocal": false
+	},
+	"layer": "VENDOR",
+	"texts": {
+		"newText": {
+			"value": "{i18n>SubmitRequest}",
+			"type": "XBUT"
+		}
+	},
+	"namespace": "apps/vwks.nlp.s2p.mm.ctrdist.create/changes/",
+	"projectId": "vwks.nlp.s2p.mm.ctrdist.create",
+	"creation": "2021-01-31T05:05:30.122Z",
+	"originalLanguage": "EN",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.78.9",
+		"sourceChangeFileName": "",
+		"compositeCommand": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"validAppVersions": {
+		"creation": "1.0.0",
+		"from": "1.0.0",
+		"to": "1.0.0"
+	},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}

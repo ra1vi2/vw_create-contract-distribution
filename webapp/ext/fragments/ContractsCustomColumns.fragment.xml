@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Column id="idContractCol" width="10%">
+		<Text text="{i18n>Contract}"/>
+		<customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "ContractCol", "leadingProperty": "ebeln", "columnIndex": "1"}'/>
+		</customData>
+	</Column>
+</core:FragmentDefinition>
